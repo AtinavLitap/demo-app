@@ -7,6 +7,11 @@ pipeline {
 
     stages {
         stage('build'){
+            when {
+                expression{
+                    ${VERSION} == "1.0"
+                }
+            }
             steps {
                 echo "Building the app in VERSION: ${VERSION}"
             }
