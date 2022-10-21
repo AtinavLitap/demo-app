@@ -8,7 +8,7 @@ pipeline {
 	    stage("stage1") {
 	        steps {
 		        withCredentials([ usernamePassword(credentials: 'jenkinsID', usernameVariable: USER, passwordVariable: PWD) ]) {
-		   		    echo "MY_CREDS2 = ${MY_CREDS}"
+		   		    echo "MY_CREDS2 = USER ${USER}, PWD ${PWD}"
 			    }
 	        }
        }
