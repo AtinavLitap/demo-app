@@ -1,0 +1,16 @@
+pipeline {
+	agent any
+	env {
+		MY_CREDS = credentials("jenkinsID")
+	}
+
+	stages {
+	  stage("stage1") {
+	    steps {
+		echo "MY_CREDS = ${MY_CREDS}"
+	    }
+          }
+       }
+
+
+}
