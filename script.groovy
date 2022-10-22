@@ -4,11 +4,7 @@ def buildApp() {
 
 def testApp() {
 	echo 'testing the application...'
-}
-
-def deployApp() {
-	echo 'deploying the application...'
-	echo "deploying application version params.${VERSION}"
+	echo "testing application version params.${VERSION}"
 }
 
 return this
