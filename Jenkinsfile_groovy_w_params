@@ -1,0 +1,35 @@
+def gv
+
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'VERSION', choices: ['1.0', '2.0','3.0'], description: 'Versions')
+        booleanParam(name: 'EXEC_TESTS', defaultValue: true, description: 'Execute Test')
+    }
+
+    stages {
+        stage('build'){
+            when {
+                expression{
+                    params.VERSION == "1.0"
+                }
+            }
+            steps {
+                script {
+                    gv.buildApp()
+            }
+        }
+        stage('test') {
+            when {
+                expression {
+                    params.EXEC_TESTS
+                }
+            }
+            steps {
+                script {
+                    gv.testApp()
+            }
+            }
+        }
+    }
+}
