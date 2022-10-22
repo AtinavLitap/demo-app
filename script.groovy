@@ -6,5 +6,4 @@ def testApp() {
 	echo 'testing the application...'
 	echo "testing application version params.${VERSION}"
 }
-
 return this
