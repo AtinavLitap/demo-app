@@ -15,17 +15,17 @@ pipeline {
                 }
             }
         }
-        stage('build') {
-            when {
-                expression {
-                    params.VERSION == "1.0"
-                }
-            }
-            steps {
-                script {
-                    gv.buildApp()
-                }
-            }
-        }
+        // stage('build') {
+        //     when {
+        //         expression {
+        //             params.VERSION == "1.0"
+        //         }
+        //     }
+        //     steps {
+        //         script {
+        //             gv.buildApp()
+        //         }
+        //     }
+        // }
     }
 }
