@@ -20,17 +20,5 @@ pipeline {
                 }
             }
         }
-        stage('test') {
-            when {
-                expression {
-                    params.EXEC_TESTS
-                }
-            }
-            steps {
-                script {
-                    gv.testApp()
-                }
-            }
-        }
     }
 }
