@@ -8,6 +8,11 @@ pipeline {
     }
 
     stages {
+        stage('init') {
+            script {
+                gv = load.script("script.goovy")
+            }
+        }
         stage('build') {
             when {
                 expression {
