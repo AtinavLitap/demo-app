@@ -8,9 +8,9 @@ pipeline {
     }
 
     stages {
-        stage('build'){
+        stage('build') {
             when {
-                expression{
+                expression {
                     params.VERSION == "1.0"
                 }
             }
