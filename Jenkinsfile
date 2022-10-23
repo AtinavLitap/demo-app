@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage ('Dev') {
+        stage ('Dev Branch') {
             steps {
-                echo 'This is Dev stage'
+                echo 'Dev branch build was successful.'
             }
         }
     }
