@@ -1,0 +1,17 @@
+pipeline {
+	agent any
+	environment {
+		MY_CREDS = credentials("jenkinsID")
+	}
+
+	stages {
+	    stage("stage1") {
+	        steps {
+				withCredentials([usernameColonPassword(credentialsId: 'jenkinsID', variable: 'USERPASS')]){
+		   		   echo "MY_CREDS2 = USERPASS =  ${USERPASS}"
+			    }
+	        }
+       }
+    }
+
+}
